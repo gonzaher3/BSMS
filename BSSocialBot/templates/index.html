@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMD Combined BS/MS Program Eligibility Tool</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <!-- Header -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <h1 class="display-6 fw-bold">
+                        <i class="fas fa-graduation-cap text-info me-2"></i>
+                        UMD Combined BS/MS Program
+                    </h1>
+                    <p class="lead text-muted">Eligibility Assessment Tool</p>
+                    <p class="text-secondary">
+                        This tool helps Computer Science students determine their eligibility for the Combined BS/MS Program at the University of Maryland.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fas fa-robot me-2"></i>
+                                Assessment Assistant
+                            </h5>
+                            <button id="resetBtn" class="btn btn-outline-light btn-sm">
+                                <i class="fas fa-refresh me-1"></i>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body p-0">
+                        <!-- Chat Messages Container -->
+                        <div id="chatContainer" class="chat-container p-4">
+                            <div class="message bot-message">
+                                <div class="message-content">
+                                    <div class="d-flex align-items-start">
+                                        <div class="avatar bg-primary rounded-circle me-3 flex-shrink-0">
+                                            <i class="fas fa-robot text-white"></i>
+                                        </div>
+                                        <div class="message-text">
+                                            <p class="mb-2">Welcome! I'll help you determine your eligibility for the UMD Combined BS/MS Program. Please have your 4-year plan ready.</p>
+                                            <p class="mb-0">Let's start with a simple question:</p>
+                                            <p class="fw-bold mt-2">Are you a CS major at UMD? (yes/no)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Input -->
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <input type="text" id="userInput" class="form-control" placeholder="Type your answer here..." autocomplete="off">
+                            <button id="sendBtn" class="btn btn-primary" type="button">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">
+                                <i class="fas fa-info-circle me-1"></i>
+                                This assessment takes about 5-10 minutes to complete.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8">
+                <div class="text-center text-muted">
+                    <small>
+                        <i class="fas fa-university me-1"></i>
+                        University of Maryland - Computer Science Department<br>
+                        This tool provides guidance only. Always confirm requirements with your academic advisor.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
